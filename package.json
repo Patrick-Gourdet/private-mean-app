@@ -1,0 +1,29 @@
+{
+  "name": "mean-app",
+  "version": "1.0.0",
+  "description": "Mean stack app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logarithm2/private-mean-app.git"
+  },
+  "keywords": [
+    "mean"
+  ],
+  "author": "Patrick Gourdet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/logarithm2/private-mean-app/issues"
+  },
+  "homepage": "https://github.com/logarithm2/private-mean-app#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "mocha": "^3.3.0"
+  }
+}
