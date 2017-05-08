@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/logarithm2/private-mean-app#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2"
   },
   "devDependencies": {

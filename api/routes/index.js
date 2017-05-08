@@ -1,8 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var ctrlFood = require('../controllers/foods.controllers.js');
+var ctrlHotel = require('../controllers/hotels.controllers.js');
 router
-.route('/foods')
-.get(ctrlFood.foodsGetAll);
+.route('/hotels')
+.get(ctrlHotel.hotelsGetAll);
+
+router
+.route('/hotels/:hotelId')
+.get(ctrlHotel.hotelsGetOne);
+
+router
+	.route('/hotels/new')
+	.post(ctrlHotel.hotelsAddOne);
 
 module.exports = router;
