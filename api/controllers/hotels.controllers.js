@@ -1,8 +1,9 @@
-var hotelData = require('../data/hotel-data.json');
+var mongoose = require('mongoose');
+var Hotel = mongoose.model('Hotel');
+
+
 
 module.exports.hotelsGetAll = function(req,res){
-	console.log('In hotel controller Get JSON data');
-	console.log(req.query);
 
 	var offset = 0;
 	var count = 5;
@@ -13,21 +14,41 @@ module.exports.hotelsGetAll = function(req,res){
 	if(req.query && req.query.count){
 		count = parseInt(req.query.count,10);
 	}
+	Hotel
+		.find()
+		.skip(offset)
+		.limit(count)
+		.exec(function(err,hotel){
+			console.log('In hotel findAll ' + hotel.length );
+			res
+				.status(200)
+				.json(hotel);
 
-	var returnData = hotelData.slice(offset,offset+count);
-	res
-	.status(200)
-	.json(returnData);
+		});
+
 };
 module.exports.hotelsGetOne = function(req,res){
+
 	var hotelId = req.params.hotelId;
-	var thisHotel = hotelData[hotelId];
+
 	console.log('In hotelId', hotelId);
-	res
-	.status(200)
-	.json(thisHotel);
+	Hotel
+		.findById(hotelId)
+		.exec(function(err,hotel){
+			if(err){
+				console.log("Error finding Object");
+				return;
+			}
+
+			res
+			.status(200)
+			.json(hotel);
+			});
+
 };
 module.exports.hotelsAddOne = function(req,res){
+	var db = conn.get();
+	var collection = db.collection('hotels');
 	console.log("Post new hotel");
 	console.log(req.body);
 	res

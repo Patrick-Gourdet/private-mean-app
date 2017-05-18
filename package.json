@@ -22,7 +22,9 @@
   "homepage": "https://github.com/logarithm2/private-mean-app#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "mongodb": "^2.2.26",
+    "mongoose": "^4.9.9"
   },
   "devDependencies": {
     "mocha": "^3.3.0"
