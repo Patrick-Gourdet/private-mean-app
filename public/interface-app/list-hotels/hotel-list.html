@@ -1,0 +1,6 @@
+<h1>{{ vm.title }}</h1>
+<ul>
+	<div  class="modal_no_bullet">
+		<li ng-repeat="hotel in vm.hotels" class="list-group-item"><a ng-href="#!/hotels/{{hotel._id}}">{{hotel.name}}</a></li>
+	</div>
+</ul>

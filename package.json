@@ -21,7 +21,14 @@
   },
   "homepage": "https://github.com/logarithm2/private-mean-app#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "angularjs": "0.0.1",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongodb": "^2.2.26",
+    "mongoose": "^4.9.9",
+    "validator": "^7.0.0"
   },
   "devDependencies": {
     "mocha": "^3.3.0"
