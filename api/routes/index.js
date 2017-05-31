@@ -6,22 +6,25 @@ var ctrlHotels = require('../controllers/hotels.controllers.js');
 var ctrlReviews = require('../controllers/reviews.controllers.js');
 router
 .route('/hotels')
-.get(ctrlHotels.hotelsGetAll);
+.get(ctrlHotels.hotelsGetAll)
+.post(ctrlHotels.hotelsAddOne);
 
 router
 .route('/hotels/:hotelId')
-.get(ctrlHotels.hotelsGetOne);
+.get(ctrlHotels.hotelsGetOne)
+.put(ctrlHotels.hotelsUpdateOne)
+.delete(ctrlHotels.hotelsDeleteOne);
 
-router
-	.route('/hotels/new')
-	.post(ctrlHotels.hotelsAddOne);
 //Review Routes
 router
 .route('/hotels/:hotelId/reviews')
-.get(ctrlReviews.reviewsGetAll);
+.get(ctrlReviews.reviewsGetAll)
+.post(ctrlReviews.reviewsAddOne);
 
 router
 .route('/hotels/:hotelId/reviews/:reviewId')
-.get(ctrlReviews.reviewsGetOne);
+.get(ctrlReviews.reviewsGetOne)
+.put(ctrlReviews.reviewsUpdateOne)
+.delete(ctrlReviews.reviewsDeleteOne);
 
 module.exports = router;
